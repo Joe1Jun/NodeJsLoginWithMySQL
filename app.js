@@ -1,4 +1,6 @@
+//import express
 const express = require("express");
+//import path 
 const path = require("path");
 const mysql2 = require("mysql2");
 const dotenv = require("dotenv");
@@ -10,7 +12,7 @@ dotenv.config({
 
 const app = express();
 
-
+// create connection to database
 const database = mysql2.createConnection({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
@@ -19,7 +21,11 @@ const database = mysql2.createConnection({
 });
 
 
+
+// dirname gives you access to directory you are in 
+// join dirname with public folder
 const publicDirectory = path.join(__dirname, './public')
+//make sure express uses this directory
 app.use(express.static(publicDirectory));
 
 
@@ -31,7 +37,7 @@ app.use(express.json());
 
 app.set('view engine', 'hbs');
 
-
+//connect to database 
 database.connect((error) =>{
 
     if (error) {
@@ -41,7 +47,7 @@ database.connect((error) =>{
     }
 }
 )
-//define routes
+
 
 app.use('/', require("./routes/pages"));
 app.use("/auth", require("./routes/auth"));
