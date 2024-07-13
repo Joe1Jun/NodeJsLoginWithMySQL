@@ -7,7 +7,7 @@ const database = mysql2.createConnection({
     host: "localhost",
     user: "root",
     password: "root",
-    database: "E-COMMERCE"// Use the DATABASE environment variable for the database name
+    database: "nodejs-login"// Use the DATABASE environment variable for the database name
 });
 
 

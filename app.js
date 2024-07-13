@@ -12,10 +12,10 @@ const app = express();
 
 
 const database = mysql2.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "E-COMMERCE"// Use the DATABASE environment variable for the database name
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE // Use the DATABASE environment variable for the database name
 });
 
 
