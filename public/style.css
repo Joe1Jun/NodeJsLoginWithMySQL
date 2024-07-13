@@ -1,0 +1,53 @@
+:root{
+
+    --bodyBg:#ccc;
+    --gmail: rgb(219, 68, 55);
+    --customGray: #e6d6f6;
+}
+body{
+
+    background-color: var(--bodyBg);
+}
+
+main{
+
+    position: relative;
+    width: 1000px;
+    height: 750px;
+    top: 10vh;
+}
+
+form{
+
+    width: 330px;
+    /* overides default bootstrap classes for forms */
+    margin: auto !important;
+}
+
+img{
+
+    height: 750px;
+    width: 100%;
+}
+.fa-xmark{
+    position:absolute;
+    top:25px;
+    left:25px;
+}
+.fa-xmark:hover{
+     cursor: pointer;
+     color: var(--gmail);
+
+}
+
+.fa-circle-user, .fa-key, .fa-envelope{
+            border: 1px solid var(--customGray);
+            padding: 0.5rem;
+
+}
+
+label:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
